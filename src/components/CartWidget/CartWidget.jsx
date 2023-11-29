@@ -1,7 +1,13 @@
+
+import { useCart } from "../../context/CartContext";
+
 const CartWidget = () => {
+    const { totalQuantity } = useCart()
+
     return(
         <button>
-            carrito: 0
+            <img/>
+            {totalQuantity}
         </button>
     )
 }
