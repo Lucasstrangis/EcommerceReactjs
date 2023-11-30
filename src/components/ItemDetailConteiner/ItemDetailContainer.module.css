@@ -1,0 +1,16 @@
+/* ItemDetailContainer.module.css */
+
+.container {
+    background-color: #1a1a1a; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 20px;
+    min-height: 100vh; /* Altura mínima de la ventana del navegador */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  

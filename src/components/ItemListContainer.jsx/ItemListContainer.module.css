@@ -1,10 +1,11 @@
 /* ItemListContainer.module.css */
 
 .container {
-  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  width: 100vw; /* Ocupa todo el ancho de la pantalla */
   background-color: #1a1a1a; /* Gris oscuro para contraste, un poco más claro que el NavBar */
   color: #fff; /* Texto blanco */
   padding: 20px;
+  
 }
 
 .product-list {
