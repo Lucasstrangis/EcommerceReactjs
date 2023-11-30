@@ -1,15 +1,18 @@
 
-import { useCart } from "../../context/CartContext";
+import { useCart } from '../../context/CartContext'
+import { useNavigate } from 'react-router-dom'
 
 const CartWidget = () => {
     const { totalQuantity } = useCart()
 
-    return(
-        <button>
-            <img/>
+    const navigate = useNavigate()
+
+    return (
+        <button onClick={() => navigate('/cart')}>
+        <img/>
             {totalQuantity}
         </button>
     )
 }
 
-export default CartWidget;
+export default CartWidget
