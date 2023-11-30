@@ -1,14 +1,20 @@
-import { Link } from "react-router-dom"
+// Item.jsx
 
-const Item = ({ id, name, img, price}) => {
-    return (
-        <div>
-            <h1>{name}</h1>
-            <img src={img} style={{widht: 100}}/>
-            <h2>${price}</h2>
-            <Link to ={`/item/${id}`}>Ver detalle</Link>
-        </div>
-    )
-}
+import React from 'react';
+import { Link } from 'react-router-dom';
+import classes from './Item.module.css';
 
-export default Item
+const Item = ({ id, name, img, price }) => {
+  return (
+    <div className={classes.itemContainer}>
+      <h1 className={classes.itemTitle}>{name}</h1>
+      <img src={img} alt={name} className={classes.itemImage} />
+      <h2 className={classes.itemPrice}>${price}</h2>
+      <Link to={`/item/${id}`} className={classes.itemLink}>
+        Ver detalle
+      </Link>
+    </div>
+  );
+};
+
+export default Item;

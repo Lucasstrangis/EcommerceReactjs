@@ -1,20 +1,23 @@
-import React from "react"
+// Cart.jsx
+
+import React from "react";
 import { useCart } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import classes from "./Cart.module.css";
 
 const Cart = () => {
   const { cart, clearCart, getTotal } = useCart();
 
   return (
-    <div>
-      <h1>Carrito de Compras</h1>
+    <div className={classes.cartContainer}>
+      <h1 className={classes.cartHeader}>Carrito de Compras</h1>
       {cart.length === 0 ? (
         <p>El carrito está vacío.</p>
       ) : (
         <div>
-          <ul>
+          <ul className={classes.cartItems}>
             {cart.map((product) => (
-              <li key={product.id}>
+              <li key={product.id} className={classes.cartItem}>
                 <span>{product.name}</span>
                 <span>Precio: ${product.price}</span>
                 <span>Cantidad: {product.quantity}</span>
@@ -22,13 +25,16 @@ const Cart = () => {
               </li>
             ))}
           </ul>
-          <p>Total: ${getTotal()}</p>
-          <button onClick={clearCart}>Limpiar Carrito</button>
-          <div>
-          <Link to="/Checkout">Checkout</Link>
+          <p className={classes.cartTotal}>Total: ${getTotal()}</p>
+          <div className={classes.cartButtons}>
+            <button className={classes.clearCartButton} onClick={clearCart}>
+              Limpiar Carrito
+            </button>
+            <Link to="/Checkout" className={classes.checkoutLink}>
+              Checkout
+            </Link>
           </div>
         </div>
-       
       )}
     </div>
   );
