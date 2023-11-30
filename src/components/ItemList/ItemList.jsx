@@ -6,7 +6,7 @@ import classes from './ItemList.module.css';
 
 const ItemList = ({ products }) => {
   return (
-    <div className={classes.productlist}>
+    <div className={classes.productList}>
       {products.map((prod) => (
         <Item key={prod.id} {...prod} />
       ))}
