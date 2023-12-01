@@ -1,18 +1,21 @@
+// CartWidget.jsx
 
-import { useCart } from '../../context/CartContext'
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import cart from "./assets/cart.jpg";
+import { useCart } from "../../context/CartContext";
+import { useNavigate } from "react-router-dom";
+import classes from "./CartWidget.module.css";
 
 const CartWidget = () => {
-    const { totalQuantity } = useCart()
+  const { totalQuantity } = useCart();
+  const navigate = useNavigate();
 
-    const navigate = useNavigate()
+  return (
+    <button onClick={() => navigate("/cart")} className={classes.cartButton}>
+      <img src={cart} alt="Cart" className={classes.cartIcon} />
+      {totalQuantity > 0 && <span className={classes.cartQuantity}>{totalQuantity}</span>}
+    </button>
+  );
+};
 
-    return (
-        <button onClick={() => navigate('/cart')}>
-        <img/>
-            {totalQuantity}
-        </button>
-    )
-}
-
-export default CartWidget
+export default CartWidget;

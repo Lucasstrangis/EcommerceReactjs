@@ -4,11 +4,12 @@ import React from 'react';
 import classes from "./NavBar.module.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
+import logo from "./assets/logo.jpg"
 
 const NavBar = () => {
   return (
     <nav className={classes.nav}>
-      <NavLink to="/" className={classes.brand}>Papelera King</NavLink>
+      <NavLink to="/" className={classes.brand}><img src= {logo}/></NavLink>
       <section className={classes.navLinks}>
         <NavLink to="/category/Bolsas" className={classes.navLink}>Bolsas</NavLink>
         <NavLink to="/category/Bandejas" className={classes.navLink}>Bandejas</NavLink>

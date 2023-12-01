@@ -1,0 +1,31 @@
+/* CartWidget.module.css */
+
+.cartButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cartIcon {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+  }
+  
+  .cartQuantity {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 14px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

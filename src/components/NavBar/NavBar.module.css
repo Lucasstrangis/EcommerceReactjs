@@ -13,6 +13,13 @@ nav {
     font-size: 20px;
     text-decoration: none;
     color: #fff; /* Texto blanco */
+    
+  }
+
+  .brand img {
+    width: 80px; /* Tamaño deseado para la imagen */
+    height: auto; /* Ajusta la altura automáticamente según el ancho */
+    margin-right: 10px; /* Ajusta el espacio entre la imagen y el texto si es necesario */
   }
   
   .nav-links {
@@ -20,6 +27,7 @@ nav {
   }
   
   .nav-link {
+    justify-content: space-between;
     text-decoration: none;
     color: #fff; /* Texto blanco */
     margin: 0 10px; /* Añadido margen a ambos lados */

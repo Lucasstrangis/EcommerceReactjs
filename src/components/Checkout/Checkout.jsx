@@ -1,7 +1,11 @@
+// Checkout.jsx
+
+import React from "react";
 import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { getDocs, collection, query, where, documentId, writeBatch, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
+import classes from "./Checkout.module.css";
 
 // Nuevo componente OrderForm
 const OrderForm = ({ onSubmit }) => {
@@ -15,7 +19,7 @@ const OrderForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={classes.orderForm}>
       <label>
         Nombre:
         <input
@@ -46,7 +50,9 @@ const OrderForm = ({ onSubmit }) => {
         />
       </label>
       <br />
-      <button type="submit">Crear orden</button>
+      <button type="submit" className={classes.orderButton}>
+        Crear orden
+      </button>
     </form>
   );
 };
@@ -113,18 +119,18 @@ const Checkout = () => {
   };
 
   if (loading) {
-    return <h1>Estamos procesando su orden...</h1>;
+    return <h1 className={classes.loadingMessage}>Estamos procesando su orden...</h1>;
   }
 
   if (orderId) {
-    return <h1>El id de su orden es: {orderId}</h1>;
+    return <h1 className={classes.orderIdMessage}>El id de su orden es: {orderId}</h1>;
   }
 
   return (
-    <>
-      <h1>Checkout</h1>  
+    <div className={classes.checkoutContainer}>
+      <h1 className={classes.checkoutHeader}>Checkout</h1>
       <OrderForm onSubmit={createOrder} />
-    </>
+    </div>
   );
 };
 
